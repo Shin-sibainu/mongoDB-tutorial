@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 
 const foodRouter = require("./routes/foodRoutes");
 
-app.set("view engine", "ejs");
 app.use(foodRouter);
 
 app.listen(3000, () => {
@@ -24,16 +23,3 @@ mongoose
     console.log("データベース接続中・・・");
   })
   .catch((error) => console.log(error));
-
-//データを取得して表示したい。
-// app.get("/", (req, res) => {
-//   res.render("home");
-// });
-
-//投稿
-// app.post("/post", (req, res) => {
-//   mongoDB.then((db) => {
-//     db.collection("posts").insertOne(req.body);
-//   });
-//   res.send("data post");
-// });
